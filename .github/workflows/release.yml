@@ -58,9 +58,6 @@ jobs:
         with:
           tagName: v__VERSION__
           releaseName: "v__VERSION__"
-          releaseBody: "--- draft release ---"
-          releaseDraft: true
-          prerelease: false
       - name: Release tauri (osx only)
         if: matrix.platform == 'macos-latest'
         uses: tauri-apps/tauri-action@v0
@@ -71,7 +68,4 @@ jobs:
         with:
           tagName: v__VERSION__
           releaseName: "v__VERSION__"
-          releaseBody: "--- draft release ---"
-          releaseDraft: true
-          prerelease: false
           args: --target universal-apple-darwin
