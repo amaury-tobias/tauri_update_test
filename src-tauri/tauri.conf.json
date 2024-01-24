@@ -1,0 +1,55 @@
+{
+  "build": {
+    "beforeDevCommand": "pnpm dev",
+    "beforeBuildCommand": "pnpm build",
+    "devPath": "http://localhost:1420",
+    "distDir": "../dist"
+  },
+  "package": {
+    "productName": "update-test",
+    "version": "0.0.1"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false,
+      "shell": {
+        "all": false,
+        "open": true
+      }
+    },
+    "bundle": {
+      "active": true,
+      "targets": "all",
+      "identifier": "com.tauri.dev",
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ]
+    },
+    "security": {
+      "csp": "default-src 'self'; img-src drive://*;",
+      "freezePrototype": true
+    },
+    "updater": {
+      "active": true,
+      "dialog": true,
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEZCNkZBNkYxQ0YxODczQjAKUldTd2N4alA4YVp2KzRKaTFUWDd0Ry9FYlBxSmRIMXg2eTdaak5pRVg1aHFxTmZ6U2Jsb0QxSS8K",
+      "endpoints": [
+        "https://github.com/amaury-tobias/tauri_update_test/releases/latest/download/latest.json"
+      ]
+    },
+    "windows": [
+      {
+        "fullscreen": false,
+        "resizable": true,
+        "title": "update-test",
+        "width": 800,
+        "height": 600,
+        "contentProtected": true
+      }
+    ]
+  }
+}
